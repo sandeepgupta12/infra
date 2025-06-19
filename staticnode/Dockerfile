@@ -14,7 +14,7 @@ RUN mkdir -p /out/bin
 RUN curl -O https://nodejs.org/dist/$VERSION/node-$VERSION.tar.gz
 RUN echo "$SHA256SUM  node-$VERSION.tar.gz" | sha256sum -c -
 RUN tar -zxvf node-$VERSION.tar.gz
-RUN cd node-$VERSION && ./configure --dest-cpu=$ARCH --fully-static && make -j$(nproc)
+RUN cd node-$VERSION && ./configure --dest-cpu=ppc --fully-static && make -j$(nproc)
 RUN cp /build/node-$VERSION/LICENSE /out/LICENSE && cp /build/node-$VERSION/out/Release/node /out/bin/node
 
 FROM scratch
