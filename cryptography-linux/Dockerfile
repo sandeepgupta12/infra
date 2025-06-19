@@ -30,8 +30,8 @@ RUN \
   if [ $(uname -m) = "ppc64le" ]; \
   then \
     if stat /etc/redhat-release 1>&2 2>/dev/null; then \
-      yum -y curl gcc gcc-c++ make openssl-devel libffi-devel python3-devel \
-      yum -y pkgconfig cmake git unzip \
+      yum -y install curl gcc gcc-c++ make openssl-devel libffi-devel python3-devel \
+      yum -y install pkgconfig cmake git unzip \
       yum -y install perl perl-IPC-Cmd && \
       yum -y clean all && \
       rm -rf /var/cache/yum; \
