@@ -25,6 +25,18 @@ RUN \
       rm -rf /var/cache/yum; \
     fi; \
   fi
+
+RUN \
+  if [ $(uname -m) = "ppc64le" ]; \
+  then \
+    if stat /etc/redhat-release 1>&2 2>/dev/null; then \
+      yum install -y curl gcc gcc-c++ make openssl-devel libffi-devel python3-devel \
+      yum install -y pkgconfig cmake git unzip \
+      yum -y install perl perl-IPC-Cmd && \
+      yum -y clean all && \
+      rm -rf /var/cache/yum; \
+    fi; \
+  fi
 RUN yum -y install perl-IPC-Cmd
 #COPY --from=staticnodejs /out/ /staticnode/
 ADD install_openssl.sh /root/install_openssl.sh
