@@ -17,7 +17,7 @@ RUN \
 # This is done as two separate steps because readelf (binutils) is not available on
 # aarch64.
 RUN \
-  if [ $(uname -m) = "aarch64" ]; \
+  if [ $(uname -m) = "ppc64le" ]; \
   then \
     if stat /etc/redhat-release 1>&2 2>/dev/null; then \
       yum -y install perl perl-IPC-Cmd && \
@@ -37,7 +37,7 @@ RUN \
 #       rm -rf /var/cache/yum; \
 #     fi; \
 #   fi
-RUN yum -y install perl-IPC-Cmd
+#RUN yum -y install perl-IPC-Cmd
 COPY --from=staticnodejs /out/ /staticnode/
 ADD install_openssl.sh /root/install_openssl.sh
 ADD openssl-version.sh /root/openssl-version.sh
