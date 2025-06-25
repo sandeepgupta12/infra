@@ -11,6 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG=C.UTF-8
 
 RUN apt-get -qq update && apt-get install -qq -y \
+    bash \
     build-essential \
     libssl-dev \
     libffi-dev \
