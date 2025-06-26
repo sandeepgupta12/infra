@@ -25,7 +25,7 @@ RUN \
       rm -rf /var/cache/yum; \
     fi; \
   fi
-
+RUN yum -y install perl perl-IPC-Cmd
 COPY --from=staticnodejs /out/ /staticnode/
 ADD install_openssl.sh /root/install_openssl.sh
 ADD openssl-version.sh /root/openssl-version.sh
