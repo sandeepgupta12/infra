@@ -23,9 +23,9 @@ jobs:
       fail-fast: false
       matrix:
         IMAGE:
-          - {RUNNER: "ubuntu-latest", MANYLINUX_ARCH: "x86_64"}
-          - {RUNNER: "ubuntu-24.04-arm", MANYLINUX_ARCH: "aarch64"}
-          - {RUNNER: "ubuntu-24.04-ppc64le", MANYLINUX_ARCH: "ppc64le"}
+          # - {RUNNER: "ubuntu-latest", MANYLINUX_ARCH: "x86_64"}
+          # - {RUNNER: "ubuntu-24.04-arm", MANYLINUX_ARCH: "aarch64"}
+          - {RUNNER: "ubuntu-24.04-ppc64le-p10", MANYLINUX_ARCH: "ppc64le"}
     steps:
     - uses: actions/checkout@v4.2.2
       with:
