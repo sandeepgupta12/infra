@@ -8,9 +8,9 @@ on:
   push:
     branches:
       - temp-ppc64le-support-1
-    paths:
-      - '.github/workflows/build-static-node.yml'
-      - 'staticnode/**'
+    # paths:
+    #   - '.github/workflows/build-static-node.yml'
+    #   - 'staticnode/**'
 
 jobs:
   build:
